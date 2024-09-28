@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at multiply_24.v(15): always construct contains both blocking and non-blocking assignments File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
+Warning (10268): Verilog HDL information at In_Buff.v(31): always construct contains both blocking and non-blocking assignments File: D:/Floating-Point-Arithmetic-Unit-Quartus/In_Buff.v Line: 31

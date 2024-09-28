@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Tx",
+					"strict" : false
+				},
+				{
+					"name" : "Tx_busy",
+					"strict" : false
+				},
+				{
+					"name" : "bulbs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bulbs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50m",
+					"strict" : false
+				},
+				{
+					"name" : "wr_en",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "Rx",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

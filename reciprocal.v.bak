@@ -1,0 +1,44 @@
+module reciprocal(
+    input [31:0] fp_in,      // Input 32-bit floating point number
+    output reg [31:0] fp_out // Output 32-bit floating point reciprocal
+    );
+    
+    // Extracting the parts of the IEEE 754 floating point format
+    wire sign_in;
+    wire [7:0] exponent_in;
+    wire [22:0] mantissa_in;
+
+    assign sign_in = fp_in[31];            // Sign bit
+    assign exponent_in = fp_in[30:23];     // Exponent bits
+    assign mantissa_in = fp_in[22:0];      // Mantissa bits
+
+    // Output components
+    reg sign_out;
+    reg [7:0] exponent_out;
+    reg [22:0] mantissa_out;
+    
+    always @(*) begin
+        // Handle special cases (zero, infinity, NaN)
+        if (exponent_in == 8'b11111111) begin
+            // If input is infinity or NaN, reciprocal will still be special (not a normal number)
+            fp_out = fp_in; // No reciprocal for special numbers
+        end else if (exponent_in == 8'b00000000 && mantissa_in == 23'b0) begin
+            // If input is zero, reciprocal is infinity (with sign)
+            fp_out = {sign_in, 8'b11111111, 23'b0}; // Infinity
+        end else begin
+            // Reciprocal operation
+            // The sign bit remains the same for the reciprocal
+            sign_out = sign_in;
+            
+            // Calculate the new exponent: 254 - input exponent
+            exponent_out = 8'd254 - exponent_in;
+            
+            // Mantissa remains the same for a normalized number (assuming precision is enough)
+            mantissa_out = mantissa_in;
+
+            // Assemble the result
+            fp_out = {sign_out, exponent_out, mantissa_out};
+        end
+    end
+
+endmodule

@@ -1,0 +1,9 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out8,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out8,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out6,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out6,

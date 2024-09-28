@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_50m'
+Slack : -7.911
+TNS   : -4414.780
+
+Type  : Slow 1200mV 85C Model Setup 'receiver:uart_Rx|ready'
+Slack : -1.618
+TNS   : -91.490
+
+Type  : Slow 1200mV 85C Model Setup 'wr_en'
+Slack : -0.845
+TNS   : -5.996
+
+Type  : Slow 1200mV 85C Model Hold 'receiver:uart_Rx|ready'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50m'
+Slack : 0.344
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'wr_en'
+Slack : 0.359
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50m'
+Slack : -3.000
+TNS   : -1245.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'wr_en'
+Slack : -3.000
+TNS   : -15.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'receiver:uart_Rx|ready'
+Slack : -1.000
+TNS   : -76.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk_50m'
+Slack : -6.899
+TNS   : -3854.737
+
+Type  : Slow 1200mV 0C Model Setup 'receiver:uart_Rx|ready'
+Slack : -1.371
+TNS   : -74.827
+
+Type  : Slow 1200mV 0C Model Setup 'wr_en'
+Slack : -0.644
+TNS   : -4.487
+
+Type  : Slow 1200mV 0C Model Hold 'clk_50m'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'receiver:uart_Rx|ready'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'wr_en'
+Slack : 0.313
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50m'
+Slack : -3.000
+TNS   : -1245.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'wr_en'
+Slack : -3.000
+TNS   : -15.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'receiver:uart_Rx|ready'
+Slack : -1.000
+TNS   : -76.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50m'
+Slack : -4.070
+TNS   : -2029.904
+
+Type  : Fast 1200mV 0C Model Setup 'receiver:uart_Rx|ready'
+Slack : -0.483
+TNS   : -19.934
+
+Type  : Fast 1200mV 0C Model Setup 'wr_en'
+Slack : -0.072
+TNS   : -0.180
+
+Type  : Fast 1200mV 0C Model Hold 'receiver:uart_Rx|ready'
+Slack : 0.032
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_50m'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'wr_en'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50m'
+Slack : -3.000
+TNS   : -1595.174
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'wr_en'
+Slack : -3.000
+TNS   : -18.458
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'receiver:uart_Rx|ready'
+Slack : -1.000
+TNS   : -76.000
+
+------------------------------------------------------------

@@ -1,0 +1,66 @@
+module In_Buff(
+    input [7: 0] data_in,
+    input clk,
+    input en,
+    input rst,
+//    output reg full,
+    output reg need_byte,
+    output reg [7: 0] bulbs,
+    input send_byte,
+    output reg [7: 0] toTx,
+    input wire enable
+    );
+
+reg [7: 0] regFile [8: 0];
+reg [3: 0] i = 0;
+reg [3: 0] l = 0;
+integer j;
+
+always @(posedge clk) begin
+    if (rst) begin
+        i <= 0;
+//        full <= 0;
+        for (j = 0; j <= 8; j = j + 1) begin
+            regFile[j] <= 0;
+        end
+    end
+    
+
+    if (en) begin
+        regFile[i] <= data_in;
+        i <= i + 1;
+        if (i < 8) begin
+            need_byte <= 1;
+        end  
+    end    
+     
+        
+//    if (i == 8) begin
+//        full <= 1;
+//    end    
+        
+    if(send_byte) begin
+        toTx <= regFile[l];
+        l <= l + 1;
+    end     
+    
+end
+
+
+wire new_clk;
+reg [24: 0] reg_clk;
+reg [3: 0] m = 0;
+
+always @(posedge clk) begin
+    reg_clk <= reg_clk + 1;
+end
+
+assign new_clk = reg_clk[23];
+
+always @(posedge new_clk) begin
+    if (enable) begin
+        m <= m + 1;
+        bulbs <= regFile[m];
+    end
+end
+endmodule
