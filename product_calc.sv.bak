@@ -1,0 +1,33 @@
+module product_calc(
+  input  logic [23:0] a_m,
+  input  logic [23:0] b_m,
+  output logic [47:0] product_out
+);
+  logic [23:0] sum, diff;
+  logic [47:0] sum_sq, diff_sq;
+
+  // Calculate sum and difference
+  assign sum = a_m + b_m;
+  assign diff = a_m - b_m;
+
+  // Instantiate LUTs for square values
+  logic [47:0] lut_sum_sq [0:16777215];
+  logic [47:0] lut_diff_sq [0:16777215];
+
+  initial begin
+    // Initialize LUTs with square values
+    for (int i = 0; i < 16777216; i++) begin
+      lut_sum_sq[i] = i * i;
+      lut_diff_sq[i] = i * i;
+    end
+  end
+
+  // Lookup square values
+  assign sum_sq = lut_sum_sq[sum];
+  assign diff_sq = lut_diff_sq[diff];
+
+  // Calculate product_out
+  assign product_out = (sum_sq - diff_sq) >> 2;
+
+
+endmodule

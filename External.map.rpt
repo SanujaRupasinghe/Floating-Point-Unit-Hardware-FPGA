@@ -1,5 +1,5 @@
 Analysis & Synthesis report for External
-Sat Sep 28 13:48:35 2024
+Sat Jan 04 10:33:23 2025
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -15,24 +15,24 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis DSP Block Usage Summary
   9. State Machine - |external|transmitter:uart_Tx|state
- 10. State Machine - |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|state
+ 10. State Machine - |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|state
  11. State Machine - |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state
  12. State Machine - |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|state
  13. State Machine - |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|state
  14. State Machine - |external|receiver:uart_Rx|state
  15. Registers Removed During Synthesis
- 16. General Register Statistics
- 17. Inverted Register Statistics
- 18. Multiplexer Restructuring Statistics (Restructuring Performed)
- 19. Parameter Settings for User Entity Instance: baudrate:uart_baud
- 20. Parameter Settings for User Entity Instance: receiver:uart_Rx
- 21. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u
- 22. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u
- 23. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub
- 24. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u
- 25. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_mul:fpu_div
- 26. Parameter Settings for User Entity Instance: transmitter:uart_Tx
- 27. Parameter Settings for Inferred Entity Instance: In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0
+ 16. Removed Registers Triggering Further Register Optimizations
+ 17. General Register Statistics
+ 18. Inverted Register Statistics
+ 19. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 20. Parameter Settings for User Entity Instance: baudrate:uart_baud
+ 21. Parameter Settings for User Entity Instance: receiver:uart_Rx
+ 22. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u
+ 23. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u
+ 24. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub
+ 25. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u
+ 26. Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u
+ 27. Parameter Settings for User Entity Instance: transmitter:uart_Tx
  28. Parameter Settings for Inferred Entity Instance: In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0
  29. lpm_mult Parameter Settings by Entity Instance
  30. Port Connectivity Checks: "In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|multiply_24:multiply_24_u"
@@ -65,19 +65,19 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 28 13:48:35 2024       ;
+; Analysis & Synthesis Status        ; Successful - Sat Jan 04 10:33:23 2025       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; External                                    ;
 ; Top-level Entity Name              ; external                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,879                                       ;
-;     Total combinational functions  ; 2,519                                       ;
-;     Dedicated logic registers      ; 1,330                                       ;
-; Total registers                    ; 1330                                        ;
+; Total logic elements               ; 3,048                                       ;
+;     Total combinational functions  ; 2,675                                       ;
+;     Dedicated logic registers      ; 1,424                                       ;
+; Total registers                    ; 1424                                        ;
 ; Total pins                         ; 14                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 14                                          ;
+; Embedded Multiplier 9-bit elements ; 7                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
@@ -192,23 +192,23 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
-; multiply_24.v                    ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v                ;         ;
-; fpu_sp_add.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv                ;         ;
-; external.v                       ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmetic-Unit-Quartus/external.v                   ;         ;
-; transmitter.v                    ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmetic-Unit-Quartus/transmitter.v                ;         ;
-; receiver.v                       ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmetic-Unit-Quartus/receiver.v                   ;         ;
-; In_Buff.v                        ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmetic-Unit-Quartus/In_Buff.v                    ;         ;
-; buadrate.v                       ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmetic-Unit-Quartus/buadrate.v                   ;         ;
-; negate.v                         ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmetic-Unit-Quartus/negate.v                     ;         ;
-; fpu_sp_mul.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv                ;         ;
-; reciprocal.v                     ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmetic-Unit-Quartus/reciprocal.v                 ;         ;
+; fpu_sp_div.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv          ;         ;
+; multiply_24.v                    ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v          ;         ;
+; fpu_sp_add.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv          ;         ;
+; external.v                       ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v             ;         ;
+; transmitter.v                    ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/transmitter.v          ;         ;
+; receiver.v                       ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/receiver.v             ;         ;
+; In_Buff.v                        ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v              ;         ;
+; buadrate.v                       ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/buadrate.v             ;         ;
+; negate.v                         ; yes             ; User Verilog HDL File        ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/negate.v               ;         ;
+; fpu_sp_mul.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv          ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf    ;         ;
 ; aglobal171.inc                   ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc  ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc ;         ;
 ; multcore.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.inc    ;         ;
 ; bypassff.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/bypassff.inc    ;         ;
 ; altshift.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.inc    ;         ;
-; db/mult_bdt.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Floating-Point-Arithmetic-Unit-Quartus/db/mult_bdt.tdf              ;         ;
+; db/mult_bdt.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/db/mult_bdt.tdf        ;         ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
 
 
@@ -217,30 +217,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 2,879         ;
+; Estimated Total logic elements              ; 3,048         ;
 ;                                             ;               ;
-; Total combinational functions               ; 2519          ;
+; Total combinational functions               ; 2675          ;
 ; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 857           ;
-;     -- 3 input functions                    ; 883           ;
-;     -- <=2 input functions                  ; 779           ;
+;     -- 4 input functions                    ; 913           ;
+;     -- 3 input functions                    ; 935           ;
+;     -- <=2 input functions                  ; 827           ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 1786          ;
-;     -- arithmetic mode                      ; 733           ;
+;     -- normal mode                          ; 1924          ;
+;     -- arithmetic mode                      ; 751           ;
 ;                                             ;               ;
-; Total registers                             ; 1330          ;
-;     -- Dedicated logic registers            ; 1330          ;
+; Total registers                             ; 1424          ;
+;     -- Dedicated logic registers            ; 1424          ;
 ;     -- I/O registers                        ; 0             ;
 ;                                             ;               ;
 ; I/O pins                                    ; 14            ;
 ;                                             ;               ;
-; Embedded Multiplier 9-bit elements          ; 14            ;
+; Embedded Multiplier 9-bit elements          ; 7             ;
 ;                                             ;               ;
 ; Maximum fan-out node                        ; clk_50m~input ;
-; Maximum fan-out                             ; 1242          ;
-; Total fan-out                               ; 12230         ;
-; Average fan-out                             ; 3.14          ;
+; Maximum fan-out                             ; 1336          ;
+; Total fan-out                               ; 12947         ;
+; Average fan-out                             ; 3.13          ;
 +---------------------------------------------+---------------+
 
 
@@ -249,20 +249,17 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-------------+--------------+
-; |external                             ; 2519 (0)            ; 1330 (0)                  ; 0           ; 14           ; 2       ; 6         ; 14   ; 0            ; |external                                                                               ; external    ; work         ;
-;    |In_Buff:In_Buff_u|                ; 2408 (271)          ; 1269 (119)                ; 0           ; 14           ; 2       ; 6         ; 0    ; 0            ; |external|In_Buff:In_Buff_u                                                             ; In_Buff     ; work         ;
-;       |fpu_sp_add:fpu_sp_add_u|       ; 605 (605)           ; 274 (274)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u                                     ; fpu_sp_add  ; work         ;
-;       |fpu_sp_add:fpu_sp_sub|         ; 609 (609)           ; 282 (282)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub                                       ; fpu_sp_add  ; work         ;
-;       |fpu_sp_mul:fpu_div|            ; 449 (424)           ; 297 (297)                 ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div                                          ; fpu_sp_mul  ; work         ;
-;          |lpm_mult:Mult0|             ; 25 (0)              ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0                           ; lpm_mult    ; work         ;
-;             |mult_bdt:auto_generated| ; 25 (25)             ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0|mult_bdt:auto_generated   ; mult_bdt    ; work         ;
-;       |fpu_sp_mul:fpu_mul_u|          ; 456 (431)           ; 297 (297)                 ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u                                        ; fpu_sp_mul  ; work         ;
+; |external                             ; 2675 (0)            ; 1424 (0)                  ; 0           ; 7            ; 1       ; 3         ; 14   ; 0            ; |external                                                                               ; external    ; work         ;
+;    |In_Buff:In_Buff_u|                ; 2566 (278)          ; 1363 (119)                ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |external|In_Buff:In_Buff_u                                                             ; In_Buff     ; work         ;
+;       |fpu_sp_add:fpu_sp_add_u|       ; 607 (607)           ; 282 (282)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u                                     ; fpu_sp_add  ; work         ;
+;       |fpu_sp_add:fpu_sp_sub|         ; 605 (605)           ; 282 (282)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub                                       ; fpu_sp_add  ; work         ;
+;       |fpu_sp_div:fpu_div_u|          ; 619 (619)           ; 383 (383)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u                                        ; fpu_sp_div  ; work         ;
+;       |fpu_sp_mul:fpu_mul_u|          ; 457 (432)           ; 297 (297)                 ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u                                        ; fpu_sp_mul  ; work         ;
 ;          |lpm_mult:Mult0|             ; 25 (0)              ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0                         ; lpm_mult    ; work         ;
 ;             |mult_bdt:auto_generated| ; 25 (25)             ; 0 (0)                     ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0|mult_bdt:auto_generated ; mult_bdt    ; work         ;
-;       |reciprocal:reciprocal_u|       ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|In_Buff:In_Buff_u|reciprocal:reciprocal_u                                     ; reciprocal  ; work         ;
 ;    |baudrate:uart_baud|               ; 30 (30)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|baudrate:uart_baud                                                            ; baudrate    ; work         ;
-;    |receiver:uart_Rx|                 ; 56 (56)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|receiver:uart_Rx                                                              ; receiver    ; work         ;
-;    |transmitter:uart_Tx|              ; 25 (25)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|transmitter:uart_Tx                                                           ; transmitter ; work         ;
+;    |receiver:uart_Rx|                 ; 55 (55)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|receiver:uart_Rx                                                              ; receiver    ; work         ;
+;    |transmitter:uart_Tx|              ; 24 (24)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |external|transmitter:uart_Tx                                                           ; transmitter ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -272,12 +269,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+-------------+
 ; Statistic                             ; Number Used ;
 +---------------------------------------+-------------+
-; Simple Multipliers (9-bit)            ; 2           ;
-; Simple Multipliers (18-bit)           ; 6           ;
+; Simple Multipliers (9-bit)            ; 1           ;
+; Simple Multipliers (18-bit)           ; 3           ;
 ; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 14          ;
+; Embedded Multiplier 9-bit elements    ; 7           ;
 ; Signed Embedded Multipliers           ; 0           ;
-; Unsigned Embedded Multipliers         ; 8           ;
+; Unsigned Embedded Multipliers         ; 4           ;
 ; Mixed Sign Embedded Multipliers       ; 0           ;
 ; Variable Sign Embedded Multipliers    ; 0           ;
 ; Dedicated Input Shift Register Chains ; 0           ;
@@ -299,24 +296,26 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|state                                                                                                                                                                       ;
-+---------------------+---------------+------------+-------------+-------------------+-------------------+------------------+------------------+-------------------+-------------------+---------------------+--------------+----------------+
-; Name                ; state.OUT_RDY ; state.PACK ; state.ROUND ; state.NORMALISE_2 ; state.NORMALISE_1 ; state.MULTIPLY_1 ; state.MULTIPLY_0 ; state.NORMALISE_B ; state.NORMALISE_A ; state.SPECIAL_CASES ; state.UNPACK ; state.WAIT_REQ ;
-+---------------------+---------------+------------+-------------+-------------------+-------------------+------------------+------------------+-------------------+-------------------+---------------------+--------------+----------------+
-; state.WAIT_REQ      ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0                ; 0                ; 0                 ; 0                 ; 0                   ; 0            ; 0              ;
-; state.UNPACK        ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0                ; 0                ; 0                 ; 0                 ; 0                   ; 1            ; 1              ;
-; state.SPECIAL_CASES ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0                ; 0                ; 0                 ; 0                 ; 1                   ; 0            ; 1              ;
-; state.NORMALISE_A   ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0                ; 0                ; 0                 ; 1                 ; 0                   ; 0            ; 1              ;
-; state.NORMALISE_B   ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0                ; 0                ; 1                 ; 0                 ; 0                   ; 0            ; 1              ;
-; state.MULTIPLY_0    ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0                ; 1                ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
-; state.MULTIPLY_1    ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 1                ; 0                ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
-; state.NORMALISE_1   ; 0             ; 0          ; 0           ; 0                 ; 1                 ; 0                ; 0                ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
-; state.NORMALISE_2   ; 0             ; 0          ; 0           ; 1                 ; 0                 ; 0                ; 0                ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
-; state.ROUND         ; 0             ; 0          ; 1           ; 0                 ; 0                 ; 0                ; 0                ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
-; state.PACK          ; 0             ; 1          ; 0           ; 0                 ; 0                 ; 0                ; 0                ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
-; state.OUT_RDY       ; 1             ; 0          ; 0           ; 0                 ; 0                 ; 0                ; 0                ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
-+---------------------+---------------+------------+-------------+-------------------+-------------------+------------------+------------------+-------------------+-------------------+---------------------+--------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|state                                                                                                                                                                                                   ;
++---------------------+---------------+------------+-------------+-------------------+-------------------+----------------+----------------+----------------+----------------+-------------------+-------------------+---------------------+--------------+----------------+
+; Name                ; state.OUT_RDY ; state.PACK ; state.ROUND ; state.NORMALISE_2 ; state.NORMALISE_1 ; state.DIVIDE_3 ; state.DIVIDE_2 ; state.DIVIDE_1 ; state.DIVIDE_0 ; state.NORMALISE_B ; state.NORMALISE_A ; state.SPECIAL_CASES ; state.UNPACK ; state.WAIT_REQ ;
++---------------------+---------------+------------+-------------+-------------------+-------------------+----------------+----------------+----------------+----------------+-------------------+-------------------+---------------------+--------------+----------------+
+; state.WAIT_REQ      ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0              ; 0              ; 0              ; 0              ; 0                 ; 0                 ; 0                   ; 0            ; 0              ;
+; state.UNPACK        ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0              ; 0              ; 0              ; 0              ; 0                 ; 0                 ; 0                   ; 1            ; 1              ;
+; state.SPECIAL_CASES ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0              ; 0              ; 0              ; 0              ; 0                 ; 0                 ; 1                   ; 0            ; 1              ;
+; state.NORMALISE_A   ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0              ; 0              ; 0              ; 0              ; 0                 ; 1                 ; 0                   ; 0            ; 1              ;
+; state.NORMALISE_B   ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0              ; 0              ; 0              ; 0              ; 1                 ; 0                 ; 0                   ; 0            ; 1              ;
+; state.DIVIDE_0      ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0              ; 0              ; 0              ; 1              ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
+; state.DIVIDE_1      ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0              ; 0              ; 1              ; 0              ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
+; state.DIVIDE_2      ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 0              ; 1              ; 0              ; 0              ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
+; state.DIVIDE_3      ; 0             ; 0          ; 0           ; 0                 ; 0                 ; 1              ; 0              ; 0              ; 0              ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
+; state.NORMALISE_1   ; 0             ; 0          ; 0           ; 0                 ; 1                 ; 0              ; 0              ; 0              ; 0              ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
+; state.NORMALISE_2   ; 0             ; 0          ; 0           ; 1                 ; 0                 ; 0              ; 0              ; 0              ; 0              ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
+; state.ROUND         ; 0             ; 0          ; 1           ; 0                 ; 0                 ; 0              ; 0              ; 0              ; 0              ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
+; state.PACK          ; 0             ; 1          ; 0           ; 0                 ; 0                 ; 0              ; 0              ; 0              ; 0              ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
+; state.OUT_RDY       ; 1             ; 0          ; 0           ; 0                 ; 0                 ; 0              ; 0              ; 0              ; 0              ; 0                 ; 0                 ; 0                   ; 0            ; 1              ;
++---------------------+---------------+------------+-------------+-------------------+-------------------+----------------+----------------+----------------+----------------+-------------------+-------------------+---------------------+--------------+----------------+
 
 
 Encoding Type:  One-Hot
@@ -393,43 +392,72 @@ Encoding Type:  One-Hot
 +----------------------+----------------------+---------------------+---------------------+----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                               ;
-+----------------------------------------------------+-------------------------------------------------------------+
-; Register name                                      ; Reason for Removal                                          ;
-+----------------------------------------------------+-------------------------------------------------------------+
-; In_Buff:In_Buff_u|bulbs[2..7]                      ; Stuck at GND due to stuck port data_in                      ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[7]     ; Merged with In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[15] ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[6]     ; Merged with In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[14] ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[5]     ; Merged with In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[13] ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[4]     ; Merged with In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[12] ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[3]     ; Merged with In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[11] ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[2]     ; Merged with In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[10] ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[9]     ; Merged with In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[1]  ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[8]     ; Merged with In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b[0]  ;
-; In_Buff:In_Buff_u|m[0]                             ; Merged with transmitter:uart_Tx|flag1                       ;
-; transmitter:uart_Tx|state~5                        ; Lost fanout                                                 ;
-; transmitter:uart_Tx|state~6                        ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|state~16      ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|state~17      ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|state~18      ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|state~19      ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state~16    ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state~17    ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state~18    ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state~19    ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|state~15   ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|state~16   ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|state~17   ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|state~18   ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|state~15 ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|state~16 ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|state~17 ; Lost fanout                                                 ;
-; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|state~18 ; Lost fanout                                                 ;
-; receiver:uart_Rx|state~6                           ; Lost fanout                                                 ;
-; receiver:uart_Rx|state~7                           ; Lost fanout                                                 ;
-; Total Number of Removed Registers = 35             ;                                                             ;
-+----------------------------------------------------+-------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                              ;
++--------------------------------------------------------+----------------------------------------+
+; Register name                                          ; Reason for Removal                     ;
++--------------------------------------------------------+----------------------------------------+
+; In_Buff:In_Buff_u|bulbs[2..7]                          ; Stuck at GND due to stuck port data_in ;
+; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[0]     ; Stuck at GND due to stuck port data_in ;
+; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|divisor[24..50] ; Stuck at GND due to stuck port data_in ;
+; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[1..26] ; Stuck at GND due to stuck port data_in ;
+; In_Buff:In_Buff_u|m[0]                                 ; Merged with transmitter:uart_Tx|flag1  ;
+; transmitter:uart_Tx|state~5                            ; Lost fanout                            ;
+; transmitter:uart_Tx|state~6                            ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|state~18        ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|state~19        ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|state~20        ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|state~21        ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state~16        ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state~17        ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state~18        ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state~19        ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|state~15       ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|state~16       ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|state~17       ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|state~18       ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|state~15     ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|state~16     ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|state~17     ; Lost fanout                            ;
+; In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|state~18     ; Lost fanout                            ;
+; receiver:uart_Rx|state~6                               ; Lost fanout                            ;
+; receiver:uart_Rx|state~7                               ; Lost fanout                            ;
+; Total Number of Removed Registers = 81                 ;                                        ;
++--------------------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                           ;
++----------------------------------------------------+---------------------------+------------------------------------------------------+
+; Register name                                      ; Reason for Removal        ; Registers Removed due to This Register               ;
++----------------------------------------------------+---------------------------+------------------------------------------------------+
+; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[0] ; Stuck at GND              ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[1],  ;
+;                                                    ; due to stuck port data_in ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[2],  ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[3],  ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[4],  ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[5],  ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[6],  ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[7],  ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[8],  ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[9],  ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[10], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[11], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[12], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[13], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[14], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[15], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[16], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[17], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[18], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[19], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[20], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[21], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[22], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[23], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[24], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[25], ;
+;                                                    ;                           ; In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[26]  ;
++----------------------------------------------------+---------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -437,12 +465,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1330  ;
+; Total registers                              ; 1424  ;
 ; Number of registers using Synchronous Clear  ; 47    ;
-; Number of registers using Synchronous Load   ; 310   ;
-; Number of registers using Asynchronous Clear ; 50    ;
+; Number of registers using Synchronous Load   ; 343   ;
+; Number of registers using Asynchronous Clear ; 52    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1221  ;
+; Number of registers using Clock Enable       ; 1313  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -486,11 +514,12 @@ Encoding Type:  One-Hot
 ; In_Buff:In_Buff_u|outputRegFile[2][3]   ; 1       ;
 ; In_Buff:In_Buff_u|outputRegFile[0][3]   ; 1       ;
 ; In_Buff:In_Buff_u|outputRegFile[3][3]   ; 1       ;
-; In_Buff:In_Buff_u|regFile[8][1]         ; 46      ;
-; In_Buff:In_Buff_u|regFile[8][7]         ; 47      ;
-; In_Buff:In_Buff_u|regFile[8][5]         ; 87      ;
-; In_Buff:In_Buff_u|regFile[8][3]         ; 7       ;
+; In_Buff:In_Buff_u|regFile[8][0]         ; 48      ;
+; In_Buff:In_Buff_u|regFile[8][6]         ; 6       ;
+; In_Buff:In_Buff_u|regFile[8][4]         ; 7       ;
+; In_Buff:In_Buff_u|regFile[8][2]         ; 4       ;
 ; In_Buff:In_Buff_u|regFile[2][6]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[6][6]         ; 4       ;
 ; In_Buff:In_Buff_u|regFile[0][0]         ; 4       ;
 ; In_Buff:In_Buff_u|regFile[1][7]         ; 4       ;
 ; In_Buff:In_Buff_u|regFile[0][2]         ; 4       ;
@@ -506,79 +535,79 @@ Encoding Type:  One-Hot
 ; In_Buff:In_Buff_u|regFile[3][5]         ; 4       ;
 ; In_Buff:In_Buff_u|regFile[3][3]         ; 4       ;
 ; In_Buff:In_Buff_u|regFile[3][1]         ; 4       ;
-; In_Buff:In_Buff_u|regFile[4][0]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[5][7]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[4][2]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[4][6]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[4][4]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[5][5]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[5][3]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[5][1]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[7][7]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[7][5]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[7][3]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[7][1]         ; 5       ;
-; In_Buff:In_Buff_u|regFile[6][6]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[4][0]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[5][7]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[4][2]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[4][6]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[4][4]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[5][5]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[5][3]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[5][1]         ; 4       ;
 ; In_Buff:In_Buff_u|regFile[6][4]         ; 4       ;
 ; In_Buff:In_Buff_u|regFile[6][2]         ; 4       ;
 ; In_Buff:In_Buff_u|regFile[6][0]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[7][7]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[7][5]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[7][3]         ; 4       ;
+; In_Buff:In_Buff_u|regFile[7][1]         ; 4       ;
 ; Total number of inverted registers = 70 ;         ;
 +-----------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |external|In_Buff:In_Buff_u|toTx[3]                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|b[23]           ;
-; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|pre_sum[1]   ;
-; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|pre_sum[9] ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|b_m[25]      ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b_m[11]    ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|a_m[5]       ;
-; 4:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|a_m[9]     ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |external|transmitter:uart_Tx|bit_pos[0]                       ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |external|receiver:uart_Rx|bit_pos[2]                          ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|a_e[2]          ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|b_e[1]          ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|a_e[9]        ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|b_e[4]        ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|b_e[3]       ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b_e[5]     ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|a_e[1]       ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|a_e[1]     ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |external|receiver:uart_Rx|sample[1]                           ;
-; 8:1                ; 23 bits   ; 115 LEs       ; 46 LEs               ; 69 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|z_m[6]          ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 10 LEs               ; 40 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|z_e[4]          ;
-; 8:1                ; 23 bits   ; 115 LEs       ; 46 LEs               ; 69 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|z_m[20]       ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 10 LEs               ; 40 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|z_e[6]        ;
-; 9:1                ; 23 bits   ; 138 LEs       ; 69 LEs               ; 69 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|z_m[2]       ;
-; 9:1                ; 23 bits   ; 138 LEs       ; 69 LEs               ; 69 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|z_m[21]    ;
-; 9:1                ; 22 bits   ; 132 LEs       ; 44 LEs               ; 88 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|z[19]        ;
-; 9:1                ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|z[8]          ;
-; 9:1                ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|z[21]           ;
-; 9:1                ; 22 bits   ; 132 LEs       ; 44 LEs               ; 88 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|z[13]      ;
-; 10:1               ; 10 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|z_e[2]       ;
-; 10:1               ; 10 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|z_e[0]     ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|z[26]        ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|z[26]         ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|z[26]           ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|z[27]      ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|a_m[1]          ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|b_m[9]          ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|a_m[22]       ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|b_m[7]        ;
-; 256:1              ; 32 bits   ; 5440 LEs      ; 160 LEs              ; 5280 LEs               ; Yes        ; |external|In_Buff:In_Buff_u|outputRegFile[2][0]                ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |external|transmitter:uart_Tx|Selector1                        ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |external|transmitter:uart_Tx|Selector0                        ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |external|receiver:uart_Rx|state                               ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|Selector9    ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|Selector5  ;
-; 11:1               ; 5 bits    ; 35 LEs        ; 20 LEs               ; 15 LEs                 ; No         ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|Selector2       ;
-; 11:1               ; 5 bits    ; 35 LEs        ; 20 LEs               ; 15 LEs                 ; No         ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|Selector5     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |external|In_Buff:In_Buff_u|toTx[6]                             ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|pre_sum[26]   ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|pre_sum[12] ;
+; 3:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|dividend[32]   ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|a_m[11]        ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|b_m[1]         ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|b_m[8]        ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b_m[17]     ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|a_m[16]       ;
+; 4:1                ; 23 bits   ; 46 LEs        ; 23 LEs               ; 23 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|a_m[22]     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |external|transmitter:uart_Tx|bit_pos[0]                        ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |external|receiver:uart_Rx|bit_pos[1]                           ;
+; 5:1                ; 51 bits   ; 153 LEs       ; 102 LEs              ; 51 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|remainder[34]  ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|a_e[0]         ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|b_e[6]         ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|a_e[5]         ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|b_e[4]         ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|b_e[9]        ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|b_e[1]      ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|a_e[5]        ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|a_e[9]      ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |external|receiver:uart_Rx|sample[3]                            ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 46 LEs               ; 69 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|z_m[22]        ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 10 LEs               ; 40 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|z_e[9]         ;
+; 8:1                ; 23 bits   ; 115 LEs       ; 46 LEs               ; 69 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|z_m[17]        ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 10 LEs               ; 40 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|z_e[6]         ;
+; 9:1                ; 23 bits   ; 138 LEs       ; 69 LEs               ; 69 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|z_m[7]        ;
+; 9:1                ; 23 bits   ; 138 LEs       ; 69 LEs               ; 69 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|z_m[15]     ;
+; 9:1                ; 22 bits   ; 132 LEs       ; 44 LEs               ; 88 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|z[3]          ;
+; 9:1                ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|z[7]           ;
+; 9:1                ; 22 bits   ; 132 LEs       ; 44 LEs               ; 88 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|z[12]       ;
+; 10:1               ; 10 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|z_e[4]        ;
+; 10:1               ; 10 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|z_e[5]      ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|z[25]         ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|z[23]          ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|z[23]       ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|z[5]           ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 48 LEs               ; 8 LEs                  ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|z[23]          ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|a_m[2]         ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|b_m[22]        ;
+; 256:1              ; 32 bits   ; 5440 LEs      ; 160 LEs              ; 5280 LEs               ; Yes        ; |external|In_Buff:In_Buff_u|outputRegFile[2][3]                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |external|transmitter:uart_Tx|Selector3                         ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |external|transmitter:uart_Tx|Selector2                         ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |external|receiver:uart_Rx|state                                ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_sub|Selector2     ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |external|In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u|Selector9   ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 20 LEs               ; 15 LEs                 ; No         ; |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|Selector12     ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 20 LEs               ; 15 LEs                 ; No         ; |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|Selector2      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------+
@@ -681,24 +710,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_mul:fpu_div ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; WAIT_REQ       ; 0000  ; Unsigned Binary                                          ;
-; UNPACK         ; 0001  ; Unsigned Binary                                          ;
-; SPECIAL_CASES  ; 0010  ; Unsigned Binary                                          ;
-; NORMALISE_A    ; 0011  ; Unsigned Binary                                          ;
-; NORMALISE_B    ; 0100  ; Unsigned Binary                                          ;
-; MULTIPLY_0     ; 0101  ; Unsigned Binary                                          ;
-; MULTIPLY_1     ; 0110  ; Unsigned Binary                                          ;
-; NORMALISE_1    ; 0111  ; Unsigned Binary                                          ;
-; NORMALISE_2    ; 1000  ; Unsigned Binary                                          ;
-; ROUND          ; 1001  ; Unsigned Binary                                          ;
-; PACK           ; 1010  ; Unsigned Binary                                          ;
-; OUT_RDY        ; 1011  ; Unsigned Binary                                          ;
-+----------------+-------+----------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; WAIT_REQ       ; 0000  ; Unsigned Binary                                            ;
+; UNPACK         ; 0001  ; Unsigned Binary                                            ;
+; SPECIAL_CASES  ; 0010  ; Unsigned Binary                                            ;
+; NORMALISE_A    ; 0011  ; Unsigned Binary                                            ;
+; NORMALISE_B    ; 0100  ; Unsigned Binary                                            ;
+; DIVIDE_0       ; 0101  ; Unsigned Binary                                            ;
+; DIVIDE_1       ; 0110  ; Unsigned Binary                                            ;
+; DIVIDE_2       ; 0111  ; Unsigned Binary                                            ;
+; DIVIDE_3       ; 1000  ; Unsigned Binary                                            ;
+; NORMALISE_1    ; 1001  ; Unsigned Binary                                            ;
+; NORMALISE_2    ; 1010  ; Unsigned Binary                                            ;
+; ROUND          ; 1011  ; Unsigned Binary                                            ;
+; PACK           ; 1100  ; Unsigned Binary                                            ;
+; OUT_RDY        ; 1101  ; Unsigned Binary                                            ;
++----------------+-------+------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -712,41 +743,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; TX_STATE_DATA  ; 10    ; Unsigned Binary                         ;
 ; TX_STATE_STOP  ; 11    ; Unsigned Binary                         ;
 +----------------+-------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0 ;
-+------------------------------------------------+--------------+--------------------------------------+
-; Parameter Name                                 ; Value        ; Type                                 ;
-+------------------------------------------------+--------------+--------------------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                           ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                         ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                         ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                       ;
-; LPM_WIDTHA                                     ; 24           ; Untyped                              ;
-; LPM_WIDTHB                                     ; 24           ; Untyped                              ;
-; LPM_WIDTHP                                     ; 48           ; Untyped                              ;
-; LPM_WIDTHR                                     ; 48           ; Untyped                              ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                              ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                              ;
-; LPM_PIPELINE                                   ; 0            ; Untyped                              ;
-; LATENCY                                        ; 0            ; Untyped                              ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                              ;
-; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                              ;
-; USE_EAB                                        ; OFF          ; Untyped                              ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                              ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                              ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                              ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                  ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                              ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                              ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                              ;
-; CBXI_PARAMETER                                 ; mult_bdt     ; Untyped                              ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                              ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                              ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                              ;
-+------------------------------------------------+--------------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -790,18 +786,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+-------------------------------------------------------+
 ; Name                                  ; Value                                                 ;
 +---------------------------------------+-------------------------------------------------------+
-; Number of entity instances            ; 2                                                     ;
-; Entity Instance                       ; In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0   ;
-;     -- LPM_WIDTHA                     ; 24                                                    ;
-;     -- LPM_WIDTHB                     ; 24                                                    ;
-;     -- LPM_WIDTHP                     ; 48                                                    ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                              ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                                    ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                                                    ;
-;     -- USE_EAB                        ; OFF                                                   ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                  ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                                    ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                                    ;
+; Number of entity instances            ; 1                                                     ;
 ; Entity Instance                       ; In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0 ;
 ;     -- LPM_WIDTHA                     ; 24                                                    ;
 ;     -- LPM_WIDTHB                     ; 24                                                    ;
@@ -832,28 +817,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 14                          ;
-; cycloneiii_ff         ; 1330                        ;
-;     CLR               ; 50                          ;
-;     ENA               ; 908                         ;
+; cycloneiii_ff         ; 1424                        ;
+;     CLR               ; 52                          ;
+;     ENA               ; 967                         ;
 ;     ENA SCLR          ; 3                           ;
 ;     ENA SCLR SLD      ; 44                          ;
-;     ENA SLD           ; 266                         ;
+;     ENA SLD           ; 299                         ;
 ;     plain             ; 59                          ;
-; cycloneiii_lcell_comb ; 2521                        ;
-;     arith             ; 733                         ;
-;         2 data inputs ; 367                         ;
-;         3 data inputs ; 366                         ;
-;     normal            ; 1788                        ;
-;         0 data inputs ; 17                          ;
-;         1 data inputs ; 190                         ;
-;         2 data inputs ; 207                         ;
-;         3 data inputs ; 517                         ;
-;         4 data inputs ; 857                         ;
-; cycloneiii_mac_mult   ; 8                           ;
-; cycloneiii_mac_out    ; 8                           ;
+; cycloneiii_lcell_comb ; 2677                        ;
+;     arith             ; 751                         ;
+;         2 data inputs ; 387                         ;
+;         3 data inputs ; 364                         ;
+;     normal            ; 1926                        ;
+;         0 data inputs ; 16                          ;
+;         1 data inputs ; 199                         ;
+;         2 data inputs ; 227                         ;
+;         3 data inputs ; 571                         ;
+;         4 data inputs ; 913                         ;
+; cycloneiii_mac_mult   ; 4                           ;
+; cycloneiii_mac_out    ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.26                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 3.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -872,133 +857,149 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Sep 28 13:48:06 2024
+    Info: Processing started: Sat Jan 04 10:32:59 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off external -c External
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file fpu_sp_mul_v2.sv
+    Info (12023): Found entity 1: fpu_sp_mul_v2 File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul_v2.sv Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file fpu_sp_div.sv
+    Info (12023): Found entity 1: fpu_sp_div File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file multiply_24.v
-    Info (12023): Found entity 1: multiply_24 File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 1
+    Info (12023): Found entity 1: multiply_24 File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file fpu_sp_add.sv
-    Info (12023): Found entity 1: fpu_sp_add File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 41
+    Info (12023): Found entity 1: fpu_sp_add File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 41
 Info (12021): Found 1 design units, including 1 entities, in source file external.v
-    Info (12023): Found entity 1: external File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 1
+    Info (12023): Found entity 1: external File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file transmitter.v
-    Info (12023): Found entity 1: transmitter File: D:/Floating-Point-Arithmetic-Unit-Quartus/transmitter.v Line: 1
+    Info (12023): Found entity 1: transmitter File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/transmitter.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file receiver.v
-    Info (12023): Found entity 1: receiver File: D:/Floating-Point-Arithmetic-Unit-Quartus/receiver.v Line: 1
+    Info (12023): Found entity 1: receiver File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/receiver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file in_buff.v
-    Info (12023): Found entity 1: In_Buff File: D:/Floating-Point-Arithmetic-Unit-Quartus/In_Buff.v Line: 1
+    Info (12023): Found entity 1: In_Buff File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file buadrate.v
-    Info (12023): Found entity 1: baudrate File: D:/Floating-Point-Arithmetic-Unit-Quartus/buadrate.v Line: 4
+    Info (12023): Found entity 1: baudrate File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/buadrate.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file negate.v
-    Info (12023): Found entity 1: negate File: D:/Floating-Point-Arithmetic-Unit-Quartus/negate.v Line: 1
+    Info (12023): Found entity 1: negate File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/negate.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file fpu_sp_mul.sv
-    Info (12023): Found entity 1: fpu_sp_mul File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 39
+    Info (12023): Found entity 1: fpu_sp_mul File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file reciprocal.v
-    Info (12023): Found entity 1: reciprocal File: D:/Floating-Point-Arithmetic-Unit-Quartus/reciprocal.v Line: 1
+    Info (12023): Found entity 1: reciprocal File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/reciprocal.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file product_calc.sv
+    Info (12023): Found entity 1: product_calc File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/product_calc.sv Line: 1
 Info (12127): Elaborating entity "external" for the top level hierarchy
-Info (12128): Elaborating entity "baudrate" for hierarchy "baudrate:uart_baud" File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 25
-Info (12128): Elaborating entity "receiver" for hierarchy "receiver:uart_Rx" File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 33
-Info (12128): Elaborating entity "In_Buff" for hierarchy "In_Buff:In_Buff_u" File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 44
-Warning (10230): Verilog HDL assignment warning at In_Buff.v(33): truncated value with size 32 to match size of target (4) File: D:/Floating-Point-Arithmetic-Unit-Quartus/In_Buff.v Line: 33
-Warning (10230): Verilog HDL assignment warning at In_Buff.v(75): truncated value with size 32 to match size of target (2) File: D:/Floating-Point-Arithmetic-Unit-Quartus/In_Buff.v Line: 75
-Info (12128): Elaborating entity "fpu_sp_add" for hierarchy "In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u" File: D:/Floating-Point-Arithmetic-Unit-Quartus/In_Buff.v Line: 94
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(95): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 95
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(96): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 96
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(133): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 133
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(134): truncated value with size 24 to match size of target (23) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 134
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(139): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 139
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(140): truncated value with size 24 to match size of target (23) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 140
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(145): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 145
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(146): truncated value with size 24 to match size of target (23) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 146
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(151): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 151
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(157): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 157
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(168): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 168
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(172): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 172
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(205): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 205
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(218): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 218
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(231): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 231
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(244): truncated value with size 32 to match size of target (24) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 244
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(246): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 246
-Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(255): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_add.sv Line: 255
-Info (12128): Elaborating entity "negate" for hierarchy "In_Buff:In_Buff_u|negate:negate_u" File: D:/Floating-Point-Arithmetic-Unit-Quartus/In_Buff.v Line: 99
-Info (12128): Elaborating entity "fpu_sp_mul" for hierarchy "In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u" File: D:/Floating-Point-Arithmetic-Unit-Quartus/In_Buff.v Line: 122
-Warning (10036): Verilog HDL or VHDL warning at fpu_sp_mul.sv(76): object "mult_24_output_ready" assigned a value but never read File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 76
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(99): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 99
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(100): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 100
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(156): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 156
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(162): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 162
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(176): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 176
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(186): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 186
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(193): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 193
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(217): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 217
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(230): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 230
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(243): truncated value with size 32 to match size of target (24) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 243
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(245): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 245
-Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(254): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 254
-Info (12128): Elaborating entity "multiply_24" for hierarchy "In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|multiply_24:multiply_24_u" File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 287
-Warning (10240): Verilog HDL Always Construct warning at multiply_24.v(15): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Warning (10240): Verilog HDL Always Construct warning at multiply_24.v(15): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Warning (10240): Verilog HDL Always Construct warning at multiply_24.v(15): inferring latch(es) for variable "mult_24_output_ready", which holds its previous value in one or more paths through the always construct File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "mult_24_output_ready" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[0]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[1]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[2]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[3]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[4]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[5]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[6]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[7]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[8]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[9]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[10]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[11]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[12]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[13]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[14]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[15]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[16]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[17]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[18]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[19]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[20]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[21]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[22]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[23]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[24]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[25]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[26]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[27]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[28]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[29]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[30]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[31]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[32]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[33]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[34]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[35]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[36]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[37]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[38]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[39]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[40]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[41]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[42]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[43]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[44]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[45]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[46]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (10041): Inferred latch for "result[47]" at multiply_24.v(15) File: D:/Floating-Point-Arithmetic-Unit-Quartus/multiply_24.v Line: 15
-Info (12128): Elaborating entity "reciprocal" for hierarchy "In_Buff:In_Buff_u|reciprocal:reciprocal_u" File: D:/Floating-Point-Arithmetic-Unit-Quartus/In_Buff.v Line: 127
-Warning (10240): Verilog HDL Always Construct warning at reciprocal.v(20): inferring latch(es) for variable "sign_out", which holds its previous value in one or more paths through the always construct File: D:/Floating-Point-Arithmetic-Unit-Quartus/reciprocal.v Line: 20
-Warning (10240): Verilog HDL Always Construct warning at reciprocal.v(20): inferring latch(es) for variable "exponent_out", which holds its previous value in one or more paths through the always construct File: D:/Floating-Point-Arithmetic-Unit-Quartus/reciprocal.v Line: 20
-Warning (10240): Verilog HDL Always Construct warning at reciprocal.v(20): inferring latch(es) for variable "mantissa_out", which holds its previous value in one or more paths through the always construct File: D:/Floating-Point-Arithmetic-Unit-Quartus/reciprocal.v Line: 20
-Info (12128): Elaborating entity "transmitter" for hierarchy "transmitter:uart_Tx" File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 52
-Info (278001): Inferred 2 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|Mult0" File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 199
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|Mult0" File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 199
-Info (12130): Elaborated megafunction instantiation "In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0" File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 199
-Info (12133): Instantiated megafunction "In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lpm_mult:Mult0" with the following parameter: File: D:/Floating-Point-Arithmetic-Unit-Quartus/fpu_sp_mul.sv Line: 199
+Info (12128): Elaborating entity "baudrate" for hierarchy "baudrate:uart_baud" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 25
+Info (12128): Elaborating entity "receiver" for hierarchy "receiver:uart_Rx" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 33
+Info (12128): Elaborating entity "In_Buff" for hierarchy "In_Buff:In_Buff_u" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 44
+Warning (10036): Verilog HDL or VHDL warning at In_Buff.v(19): object "input_ready" assigned a value but never read File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v Line: 19
+Warning (10036): Verilog HDL or VHDL warning at In_Buff.v(19): object "input_sub_ready" assigned a value but never read File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v Line: 19
+Warning (10230): Verilog HDL assignment warning at In_Buff.v(33): truncated value with size 32 to match size of target (4) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v Line: 33
+Warning (10230): Verilog HDL assignment warning at In_Buff.v(75): truncated value with size 32 to match size of target (2) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v Line: 75
+Info (12128): Elaborating entity "fpu_sp_add" for hierarchy "In_Buff:In_Buff_u|fpu_sp_add:fpu_sp_add_u" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v Line: 106
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(95): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 95
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(96): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 96
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(133): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 133
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(134): truncated value with size 24 to match size of target (23) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 134
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(139): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 139
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(140): truncated value with size 24 to match size of target (23) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 140
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(145): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 145
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(146): truncated value with size 24 to match size of target (23) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 146
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(151): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 151
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(157): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 157
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(168): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 168
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(172): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 172
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(205): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 205
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(218): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 218
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(231): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 231
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(244): truncated value with size 32 to match size of target (24) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 244
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(246): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 246
+Warning (10230): Verilog HDL assignment warning at fpu_sp_add.sv(255): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv Line: 255
+Info (12128): Elaborating entity "negate" for hierarchy "In_Buff:In_Buff_u|negate:negate_u" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v Line: 111
+Info (12128): Elaborating entity "fpu_sp_mul" for hierarchy "In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v Line: 134
+Warning (10036): Verilog HDL or VHDL warning at fpu_sp_mul.sv(76): object "mult_24_output_ready" assigned a value but never read File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 76
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(99): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 99
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(100): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 100
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(156): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 156
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(162): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 162
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(176): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 176
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(186): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 186
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(193): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 193
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(217): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 217
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(230): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 230
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(243): truncated value with size 32 to match size of target (24) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 243
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(245): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 245
+Warning (10230): Verilog HDL assignment warning at fpu_sp_mul.sv(254): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 254
+Info (12128): Elaborating entity "multiply_24" for hierarchy "In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|multiply_24:multiply_24_u" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 287
+Warning (10240): Verilog HDL Always Construct warning at multiply_24.v(15): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Warning (10240): Verilog HDL Always Construct warning at multiply_24.v(15): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Warning (10240): Verilog HDL Always Construct warning at multiply_24.v(15): inferring latch(es) for variable "mult_24_output_ready", which holds its previous value in one or more paths through the always construct File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "mult_24_output_ready" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[0]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[1]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[2]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[3]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[4]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[5]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[6]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[7]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[8]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[9]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[10]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[11]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[12]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[13]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[14]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[15]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[16]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[17]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[18]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[19]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[20]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[21]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[22]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[23]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[24]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[25]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[26]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[27]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[28]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[29]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[30]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[31]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[32]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[33]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[34]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[35]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[36]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[37]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[38]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[39]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[40]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[41]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[42]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[43]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[44]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[45]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[46]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (10041): Inferred latch for "result[47]" at multiply_24.v(15) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v Line: 15
+Info (12128): Elaborating entity "fpu_sp_div" for hierarchy "In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v Line: 145
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(95): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 95
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(96): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 96
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(161): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 161
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(167): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 167
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(181): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 181
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(191): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 191
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(225): truncated value with size 32 to match size of target (6) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 225
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(242): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 242
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(255): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 255
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(268): truncated value with size 32 to match size of target (24) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 268
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(270): truncated value with size 32 to match size of target (10) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 270
+Warning (10230): Verilog HDL assignment warning at fpu_sp_div.sv(279): truncated value with size 32 to match size of target (8) File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv Line: 279
+Info (12128): Elaborating entity "transmitter" for hierarchy "transmitter:uart_Tx" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 52
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|Mult0" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 199
+Info (12130): Elaborated megafunction instantiation "In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0" File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 199
+Info (12133): Instantiated megafunction "In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|lpm_mult:Mult0" with the following parameter: File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv Line: 199
     Info (12134): Parameter "LPM_WIDTHA" = "24"
     Info (12134): Parameter "LPM_WIDTHB" = "24"
     Info (12134): Parameter "LPM_WIDTHP" = "48"
@@ -1009,36 +1010,36 @@ Info (12133): Instantiated megafunction "In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|lp
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_bdt.tdf
-    Info (12023): Found entity 1: mult_bdt File: D:/Floating-Point-Arithmetic-Unit-Quartus/db/mult_bdt.tdf Line: 30
-Info (13014): Ignored 256 buffer(s)
-    Info (13019): Ignored 256 SOFT buffer(s)
+    Info (12023): Found entity 1: mult_bdt File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/db/mult_bdt.tdf Line: 30
+Info (13014): Ignored 128 buffer(s)
+    Info (13019): Ignored 128 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "bulbs[2]" is stuck at GND File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 13
-    Warning (13410): Pin "bulbs[3]" is stuck at GND File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 13
-    Warning (13410): Pin "bulbs[4]" is stuck at GND File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 13
-    Warning (13410): Pin "bulbs[5]" is stuck at GND File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 13
-    Warning (13410): Pin "bulbs[6]" is stuck at GND File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 13
-    Warning (13410): Pin "bulbs[7]" is stuck at GND File: D:/Floating-Point-Arithmetic-Unit-Quartus/external.v Line: 13
+    Warning (13410): Pin "bulbs[2]" is stuck at GND File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 13
+    Warning (13410): Pin "bulbs[3]" is stuck at GND File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 13
+    Warning (13410): Pin "bulbs[4]" is stuck at GND File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 13
+    Warning (13410): Pin "bulbs[5]" is stuck at GND File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 13
+    Warning (13410): Pin "bulbs[6]" is stuck at GND File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 13
+    Warning (13410): Pin "bulbs[7]" is stuck at GND File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/external.v Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 20 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file D:/Floating-Point-Arithmetic-Unit-Quartus/External.map.smsg
+Info (144001): Generated suppressed messages file D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/External.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2911 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3071 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 2883 logic cells
-    Info (21062): Implemented 14 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 47 warnings
-    Info: Peak virtual memory: 4792 megabytes
-    Info: Processing ended: Sat Sep 28 13:48:36 2024
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:00:44
+    Info (21061): Implemented 3050 logic cells
+    Info (21062): Implemented 7 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Sat Jan 04 10:33:23 2025
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:39
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/Floating-Point-Arithmetic-Unit-Quartus/External.map.smsg.
+The suppressed messages can be found in D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/External.map.smsg.
 
 

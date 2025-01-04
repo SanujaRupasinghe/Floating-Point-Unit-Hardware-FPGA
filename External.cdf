@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE22F17) Path("D:/Floating-Point-Arithmetic-Unit-Quartus/") File("External.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE22F17) Path("D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/") File("External.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

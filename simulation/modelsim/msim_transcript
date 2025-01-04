@@ -1,0 +1,173 @@
+# Reading D:/intelFPGA/17.1/modelsim_ase/tcl/vsim/pref.tcl
+# do External_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intelFPGA/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA {D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:23 on Jan 03,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA" D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v 
+# -- Compiling module multiply_24
+# 
+# Top level modules:
+# 	multiply_24
+# End time: 17:30:23 on Jan 03,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA {D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:23 on Jan 03,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA" D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v 
+# -- Compiling module In_Buff
+# 
+# Top level modules:
+# 	In_Buff
+# End time: 17:30:23 on Jan 03,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA {D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/negate.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:23 on Jan 03,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA" D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/negate.v 
+# -- Compiling module negate
+# 
+# Top level modules:
+# 	negate
+# End time: 17:30:23 on Jan 03,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA {D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:23 on Jan 03,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA" D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv 
+# -- Compiling module fpu_sp_div
+# 
+# Top level modules:
+# 	fpu_sp_div
+# End time: 17:30:24 on Jan 03,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA {D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:24 on Jan 03,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA" D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv 
+# -- Compiling module fpu_sp_add
+# 
+# Top level modules:
+# 	fpu_sp_add
+# End time: 17:30:24 on Jan 03,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA {D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:25 on Jan 03,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA" D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv 
+# -- Compiling module fpu_sp_mul
+# 
+# Top level modules:
+# 	fpu_sp_mul
+# End time: 17:30:25 on Jan 03,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA {D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:30:25 on Jan 03,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA" D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff_tb.sv 
+# -- Compiling module In_Buff_tb
+# 
+# Top level modules:
+# 	In_Buff_tb
+# End time: 17:30:25 on Jan 03,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
+# Start time: 17:30:25 on Jan 03,2025
+# ** Error: (vsim-3170) Could not find 'tb'.
+#         Searched libraries:
+#             D:/intelFPGA/17.1/modelsim_ase/altera/verilog/altera
+#             D:/intelFPGA/17.1/modelsim_ase/altera/verilog/220model
+#             D:/intelFPGA/17.1/modelsim_ase/altera/verilog/sgate
+#             D:/intelFPGA/17.1/modelsim_ase/altera/verilog/altera_mf
+#             D:/intelFPGA/17.1/modelsim_ase/altera/verilog/altera_lnsim
+#             D:/intelFPGA/17.1/modelsim_ase/altera/verilog/cycloneive
+#             D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/simulation/modelsim/rtl_work
+#             D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./External_run_msim_rtl_verilog.do PAUSED at line 17
+vsim work.In_Buff
+# vsim work.In_Buff 
+# Start time: 17:30:25 on Jan 03,2025
+# Loading work.In_Buff
+# Loading sv_std.std
+# Loading work.fpu_sp_add
+# Loading work.negate
+# Loading work.fpu_sp_mul
+# Loading work.multiply_24
+# Loading work.fpu_sp_div
+# ** Warning: (vsim-3839) D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv(76): Variable '/In_Buff/fpu_mul_u/mult_24_output_ready', driven via a port connection, is multiply driven. See D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv(281).
+#    Time: 0 ps  Iteration: 0  Instance: /In_Buff/fpu_mul_u File: D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv
+add wave -position insertpoint /In_Buff/Tx_busy
+add wave -position insertpoint /In_Buff/regFile
+add wave -position insertpoint /In_Buff/negate_u/in_val
+add wave -position insertpoint /In_Buff/negated
+add wave -position insertpoint /In_Buff/negate_u/out_val
+add wave -position insertpoint /In_Buff/fpu_sp_add_u/clk
+add wave -position insertpoint /In_Buff/clk
+add wave -position insertpoint /In_Buff/rst
+add wave -position insertpoint /In_Buff/fpu_sp_add_u/rst_n
+add wave -position insertpoint /In_Buff/fpu_sp_add_u/din1
+add wave -position insertpoint /In_Buff/fpu_sp_add_u/din2
+add wave -position insertpoint /In_Buff/input_sub_ready
+add wave -position insertpoint /In_Buff/fpu_sp_add_u/dval
+add wave -position insertpoint /In_Buff/sub_result
+add wave -position insertpoint /In_Buff/fpu_sp_add_u/result
+add wave -position insertpoint /In_Buff/fpu_sp_add_u/rdy
+add wave -position insertpoint /In_Buff/sub_ready
+add wave -position insertpoint /In_Buff/fpu_mul_u/clk
+add wave -position insertpoint /In_Buff/fpu_mul_u/rst_n
+add wave -position insertpoint /In_Buff/fpu_mul_u/din1
+add wave -position insertpoint /In_Buff/fpu_mul_u/din2
+add wave -position insertpoint /In_Buff/input_mul_ready
+add wave -position insertpoint /In_Buff/fpu_mul_u/dval
+add wave -position insertpoint /In_Buff/mul_result
+add wave -position insertpoint /In_Buff/fpu_mul_u/result
+add wave -position insertpoint /In_Buff/fpu_mul_u/rdy
+add wave -position insertpoint /In_Buff/mul_ready
+add wave -position insertpoint /In_Buff/div_ready
+add wave -position insertpoint /In_Buff/add_ready
+add wave -position insertpoint /In_Buff/fpu_div_u/clk
+add wave -position insertpoint /In_Buff/fpu_div_u/rst_n
+add wave -position insertpoint /In_Buff/fpu_div_u/din1
+add wave -position insertpoint /In_Buff/fpu_div_u/din2
+add wave -position insertpoint /In_Buff/input_div_ready
+add wave -position insertpoint /In_Buff/fpu_div_u/dval
+add wave -position insertpoint /In_Buff/div_result
+add wave -position insertpoint /In_Buff/fpu_div_u/result
+add wave -position insertpoint /In_Buff/fpu_div_u/rdy
+add wave -position insertpoint /In_Buff/op_ready
+add wave -position insertpoint /In_Buff/ADD_OP
+add wave -position insertpoint /In_Buff/result
+add wave -position insertpoint /In_Buff/add_result
+add wave -position insertpoint /In_Buff/SUB_OP
+add wave -position insertpoint /In_Buff/MUL_OP
+add wave -position insertpoint /In_Buff/DIV_OP
+add wave -position insertpoint /In_Buff/outputRegFile
+add wave -position insertpoint /In_Buff/i
+add wave -position insertpoint /In_Buff/m
+add wave -position insertpoint /In_Buff/input_add_ready
+add wave -position insertpoint /In_Buff/input_ready
+add wave -position insertpoint /In_Buff/data_in
+add wave -position insertpoint /In_Buff/reciproacled
+add wave -position insertpoint /In_Buff/j
+add wave -position insertpoint /In_Buff/en
+add wave -position insertpoint /In_Buff/bulbs
+add wave -position insertpoint /In_Buff/wr_en
+add wave -position insertpoint /In_Buff/toTx
+run
+# End time: 17:31:45 on Jan 03,2025, Elapsed time: 0:01:20
+# Errors: 1, Warnings: 1

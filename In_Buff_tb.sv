@@ -1,0 +1,174 @@
+`timescale 1ns/1ps
+ 
+module In_Buff_tb;
+    // Testbench signals
+    reg [7:0] data_in;
+    reg clk;
+    reg en;
+    reg rst;
+    reg wr_en;
+    reg Tx_busy;
+    wire [7:0] bulbs;
+    wire [7:0] toTx;
+ 
+    // Instantiate the DUT (Device Under Test)
+    In_Buff uut (
+        .data_in(data_in),
+        .clk(clk),
+        .en(en),
+        .rst(rst),
+        .bulbs(bulbs),
+        .toTx(toTx),
+        .wr_en(wr_en),
+        .Tx_busy(Tx_busy)
+    );
+ 
+    // Clock generation
+
+    initial clk = 0;
+    always #10 clk = ~clk; // 20ns clock period
+ 
+    // Reset and initialization task
+    task reset_dut;
+		 begin
+			  rst = 0;
+			  en=0;
+			  data_in=0;
+			  wr_en=0;
+			  Tx_busy=0;
+			  #20;
+			  rst = 1;
+		 end
+    endtask
+ 
+    // Load Operend into the register file
+    task load_Operend(input [31:0] val);
+		 begin
+			  @(posedge clk);
+			  en = 1;
+			  data_in=val[31:24];
+			  @(posedge clk);
+			  en=0;
+			  @(posedge clk);
+			  en = 1;
+			  data_in=val[23:16];
+			  @(posedge clk);
+			  en=0;
+			  @(posedge clk);
+			  en = 1;
+			  data_in=val[15:8];
+			  @(posedge clk);
+			  en=0;
+			  @(posedge clk);
+			  en = 1;
+			  data_in=val[7:0];
+			  @(posedge clk);
+			  en=0;
+		 end
+    endtask
+ 
+    task load_Opcode(input [7:0] op);
+		 begin   
+			  @(posedge clk);
+			  en = 1;
+			  data_in=op[7:0];
+			  @(posedge clk);
+			  en=0;
+		 end
+    endtask
+
+    // Wait for operation to complete
+    task wait_for_ready;
+		 begin
+			  while (uut.op_ready == 0) @(posedge clk);
+		 end
+    endtask
+
+    // Verify result
+    task verify_resultwait_for_ready(input [31:0] expected);
+		 begin
+			  @(posedge clk);
+			  if ({uut.outputRegFile[0], uut.outputRegFile[1], uut.outputRegFile[2], uut.outputRegFile[3]} == expected) begin
+					$display("Test passed: Result = %h", expected);
+			  end else begin
+					$display("Test failed: Expected %h, Got %h", expected, {uut.outputRegFile[0], uut.outputRegFile[1], uut.outputRegFile[2], uut.outputRegFile[3]});
+			  end
+		 end
+    endtask
+ 
+    // Floating-point test cases
+    localparam [31:0] FP_ONE       = 32'h3F800000; // +1.0
+    localparam [31:0] FP_TWO       = 32'h40000000; // +2.0
+    localparam [31:0] FP_MINUS_ONE = 32'hBF800000; // -1.0
+    localparam [31:0] FP_MINUS_TWO = 32'hC0000000; // -2.0
+    localparam [31:0] FP_ZERO      = 32'h00000000; // 0.0
+    localparam [7:0]  ADD_OP       = 8'b11110000;
+    localparam [7:0]  SUB_OP       = 8'b00001111;
+    localparam [7:0]  MUL_OP       = 8'b00110011;
+    localparam [7:0]  DIV_OP       = 8'b11001100;
+
+	 
+    initial begin
+        // Initialize signals
+        reset_dut();
+
+//        // Test addition: 1.0 + 2.0 = 3.0
+//        load_Operend(FP_ONE);
+//        load_Operend(FP_TWO);
+//        load_Opcode(ADD_OP);
+//        wait_for_ready();
+//        verify_resultwait_for_ready(32'h40400000); // Expected: +3.0
+
+
+
+//        // Test subtraction: 1.0 - 2.0 = -1.0
+//        load_Operend(FP_ONE);
+//        load_Operend(FP_TWO);
+//        load_Opcode(SUB_OP);
+//        wait_for_ready();
+//        verify_resultwait_for_ready(32'hBF800000); // Expected: -1.0
+
+
+
+//        // Test multiplication: -1.0 * 2.0 = -2.0
+//        load_Operend(FP_MINUS_ONE);
+//        load_Operend(FP_TWO);
+//        load_Opcode(MUL_OP);
+//        wait_for_ready();
+//        verify_resultwait_for_ready(FP_MINUS_TWO); // Expected: -2.0
+ 
+
+ 
+//        // Test division: 2.0 / 1.0 = 2.0
+//        load_Operend(FP_TWO);
+//        load_Operend(FP_ONE);
+//        load_Opcode(DIV_OP);
+//        wait_for_ready();
+//        verify_resultwait_for_ready(FP_TWO); // Expected: +2.0
+
+
+//        // Test division: 5.0 / 2.0 = 2.5
+
+        load_Operend(32'h40a00000);
+        load_Operend(FP_TWO);
+        load_Opcode(DIV_OP);
+        wait_for_ready();
+        verify_resultwait_for_ready(32'h40200000); // Expected: +2.5 (40200000)
+ 
+ 
+//        // Test division by zero: 1.0 / 0.0 = +Infinity
+//        load_Operend(FP_ONE);
+//        load_Operend(FP_ZERO);
+//        load_Opcode(DIV_OP);
+//        wait_for_ready();
+//        verify_resultwait_for_ready(32'h7F800000); // Expected: +Infinity
+ 
+ 
+        // End simulation
+        $display("All tests completed.");
+        $stop;
+
+    end
+ 
+endmodule
+

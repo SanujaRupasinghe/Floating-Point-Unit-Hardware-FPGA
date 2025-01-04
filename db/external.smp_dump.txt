@@ -6,20 +6,22 @@ state.TX_STATE_START 0 0 1 1
 state.TX_STATE_DATA 0 1 0 1 
 state.TX_STATE_STOP 1 0 0 1 
 
-State Machine - |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_div|state
-Name state.OUT_RDY state.PACK state.ROUND state.NORMALISE_2 state.NORMALISE_1 state.MULTIPLY_1 state.MULTIPLY_0 state.NORMALISE_B state.NORMALISE_A state.SPECIAL_CASES state.UNPACK state.WAIT_REQ 
-state.WAIT_REQ 0 0 0 0 0 0 0 0 0 0 0 0 
-state.UNPACK 0 0 0 0 0 0 0 0 0 0 1 1 
-state.SPECIAL_CASES 0 0 0 0 0 0 0 0 0 1 0 1 
-state.NORMALISE_A 0 0 0 0 0 0 0 0 1 0 0 1 
-state.NORMALISE_B 0 0 0 0 0 0 0 1 0 0 0 1 
-state.MULTIPLY_0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.MULTIPLY_1 0 0 0 0 0 1 0 0 0 0 0 1 
-state.NORMALISE_1 0 0 0 0 1 0 0 0 0 0 0 1 
-state.NORMALISE_2 0 0 0 1 0 0 0 0 0 0 0 1 
-state.ROUND 0 0 1 0 0 0 0 0 0 0 0 1 
-state.PACK 0 1 0 0 0 0 0 0 0 0 0 1 
-state.OUT_RDY 1 0 0 0 0 0 0 0 0 0 0 1 
+State Machine - |external|In_Buff:In_Buff_u|fpu_sp_div:fpu_div_u|state
+Name state.OUT_RDY state.PACK state.ROUND state.NORMALISE_2 state.NORMALISE_1 state.DIVIDE_3 state.DIVIDE_2 state.DIVIDE_1 state.DIVIDE_0 state.NORMALISE_B state.NORMALISE_A state.SPECIAL_CASES state.UNPACK state.WAIT_REQ 
+state.WAIT_REQ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.UNPACK 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.SPECIAL_CASES 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.NORMALISE_A 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.NORMALISE_B 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.DIVIDE_0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.DIVIDE_1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.DIVIDE_2 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.DIVIDE_3 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.NORMALISE_1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.NORMALISE_2 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.ROUND 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.PACK 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.OUT_RDY 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |external|In_Buff:In_Buff_u|fpu_sp_mul:fpu_mul_u|state
 Name state.OUT_RDY state.PACK state.ROUND state.NORMALISE_2 state.NORMALISE_1 state.MULTIPLY_1 state.MULTIPLY_0 state.NORMALISE_B state.NORMALISE_A state.SPECIAL_CASES state.UNPACK state.WAIT_REQ 

@@ -1,0 +1,178 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/simulation/modelsim
+vfpu_sp_add
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1735905624
+!i10b 1
+!s100 X=KYOWVe5:_;jUeZ?hNfm0
+IohgBQb16TZ7laCW]DO@>A3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 fpu_sp_add_sv_unit
+S1
+R0
+w1727346913
+8D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv
+FD:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv
+L0 41
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1735905624.000000
+!s107 D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA|D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_add.sv|
+!i113 1
+Z5 o-sv -work work
+Z6 !s92 -sv -work work +incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA
+Z7 tCvgOpt 0
+vfpu_sp_div
+R1
+R2
+!i10b 1
+!s100 aYT1F3FSlNI=ciTgWZBF<3
+IioO4SK^57z04a9]MlOFZ23
+R3
+!s105 fpu_sp_div_sv_unit
+S1
+R0
+w1735057580
+8D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv
+FD:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv
+Z8 L0 39
+R4
+r1
+!s85 0
+31
+Z9 !s108 1735905623.000000
+!s107 D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA|D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_div.sv|
+!i113 1
+R5
+R6
+R7
+vfpu_sp_mul
+R1
+Z10 !s110 1735905625
+!i10b 1
+!s100 d<cSjPkh44LAamLzh2C[?2
+IIOFCiIP:69J1VgajQdMd81
+R3
+!s105 fpu_sp_mul_sv_unit
+S1
+R0
+w1727422427
+8D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv
+FD:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv
+R8
+R4
+r1
+!s85 0
+31
+Z11 !s108 1735905625.000000
+!s107 D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA|D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/fpu_sp_mul.sv|
+!i113 1
+R5
+R6
+R7
+vIn_Buff
+Z12 !s110 1735905623
+!i10b 1
+!s100 NemK5KTE8bP2]QoPI]<E[2
+IoHPCbNbA4OQ6Ec8Zm:GkP3
+R3
+R0
+w1735905085
+8D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v
+FD:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA|D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff.v|
+!i113 1
+Z13 o-vlog01compat -work work
+Z14 !s92 -vlog01compat -work work +incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA
+R7
+n@in_@buff
+vIn_Buff_tb
+R1
+R10
+!i10b 1
+!s100 Se=@T8`[@RL=STk2VDdKf1
+I4oz<lnB@g?>fb_0l9Tb4z3
+R3
+!s105 In_Buff_tb_sv_unit
+S1
+R0
+w1735905490
+8D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff_tb.sv
+FD:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff_tb.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R11
+!s107 D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA|D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/In_Buff_tb.sv|
+!i113 1
+R5
+R6
+R7
+n@in_@buff_tb
+vmultiply_24
+R12
+!i10b 1
+!s100 ;VhV:^E=cBdib?MRVhQKY0
+I29:SYGkf8O4M6<Ym9h6@E0
+R3
+R0
+w1727422430
+8D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v
+FD:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA|D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/multiply_24.v|
+!i113 1
+R13
+R14
+R7
+vnegate
+R12
+!i10b 1
+!s100 iWI:LPVoc:d70g0QK7>Ga0
+I5UgOnMXBEnoGW5oI88GT`1
+R3
+R0
+w1727346483
+8D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/negate.v
+FD:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/negate.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/negate.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA|D:/Floating-Point-Arithmatic-Unit-Hardware-FPGA/negate.v|
+!i113 1
+R13
+R14
+R7

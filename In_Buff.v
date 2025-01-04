@@ -16,7 +16,7 @@ reg [7: 0] regFile [15: 0];
 reg [7: 0] outputRegFile [3: 0];
 reg [3: 0] i = 0;
 reg [1: 0] m = 0;
-wire input_ready;
+wire input_ready, input_add_ready, input_sub_ready, input_mul_ready, input_div_ready;
 wire [7: 0] negated;
 wire [31: 0] reciproacled;
 integer j;
@@ -47,13 +47,13 @@ initial begin
 	regFile[6] = 8'b01010101;
 	regFile[7] = 8'b10101010;
 	regFile[8] = 8'b01010101;
-	regFile[8] = 8'b10101010;
-	regFile[9] = 8'b01010101;
-	regFile[10] = 8'b10101010;
-	regFile[11] = 8'b01010101;
-	regFile[12] = 8'b10101010;
-	regFile[13] = 8'b01010101;
-	regFile[14] = 8'b10101010;
+	regFile[9] = 8'b10101010;
+	regFile[10] = 8'b01010101;
+	regFile[11] = 8'b10101010;
+	regFile[12] = 8'b01010101;
+	regFile[13] = 8'b10101010;
+	regFile[14] = 8'b01010101;
+	regFile[15] = 8'b10101010;
 	regFile[15] = 8'b01010101;
 end
 
@@ -78,17 +78,29 @@ always @(posedge wr_en) begin
 	toTx <= outputRegFile[m];
 end
 
-
+//always @(*) begin
+//	bulbs <= outputRegFile[0];
+//end
 
 
 assign input_ready = (i == 8);
+//assign input_add_ready = input_ready && (regFile[8] == ADD_OP);
+//assign input_sub_ready = input_ready && (regFile[8] == SUB_OP);
+//assign input_mul_ready = input_ready && (regFile[8] == MUL_OP);
+//assign input_div_ready = input_ready && (regFile[8] == DIV_OP);
+
+assign input_add_ready = regFile[8] == ADD_OP;
+assign input_sub_ready = regFile[8] == SUB_OP;
+assign input_mul_ready = regFile[8] == MUL_OP;
+assign input_div_ready = regFile[8] == DIV_OP;
+
 
 fpu_sp_add fpu_sp_add_u(
         .clk(clk),
         .rst_n(rst),
         .din1({regFile[0], regFile[1], regFile[2], regFile[3]}),
-        .din2({regFile[4], regFile[5], regFile[7], regFile[7]}),
-        .dval(input_ready),
+        .din2({regFile[4], regFile[5], regFile[6], regFile[7]}),
+        .dval(input_add_ready),
         .result(add_result),
         .rdy(add_ready)
       );
@@ -104,7 +116,7 @@ fpu_sp_add fpu_sp_sub(
     .rst_n(rst),
     .din1({regFile[0], regFile[1], regFile[2], regFile[3]}),
     .din2({negated, regFile[5], regFile[6], regFile[7]}),
-    .dval(input_ready),
+    .dval(input_add_ready),
     .result(sub_result),
     .rdy(sub_ready)
 );
@@ -116,23 +128,18 @@ fpu_sp_mul fpu_mul_u(
     .rst_n(rst),
     .din1({regFile[0], regFile[1], regFile[2], regFile[3]}),
     .din2({regFile[4], regFile[5], regFile[6], regFile[7]}),
-    .dval(input_ready),
+    .dval(input_mul_ready),
     .result(mul_result),
     .rdy(mul_ready)
 );
 
-reciprocal reciprocal_u(
-	.fp_in({regFile[4], regFile[5], regFile[6], regFile[7]}),
-	.fp_out(reciproacled)
-);
 
-
-fpu_sp_mul fpu_div(
+fpu_sp_div fpu_div_u(
     .clk(clk),
     .rst_n(rst),
     .din1({regFile[0], regFile[1], regFile[2], regFile[3]}),
-    .din2(reciproacled),
-    .dval(input_ready),
+    .din2({regFile[4], regFile[5], regFile[6], regFile[7]}),
+    .dval(input_div_ready),
     .result(div_result),
     .rdy(div_ready)
 );

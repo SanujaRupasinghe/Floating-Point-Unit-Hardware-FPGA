@@ -4,7 +4,7 @@ from Decode import ieee754_32bit_to_float
 EXPECTED_BYTES = 4
 
 ser = serial.Serial(
-    port='COM3',  
+    port='COM7',  
     baudrate=115200,  
     timeout=1 
 )

@@ -2,7 +2,7 @@ import serial
 import time
 
 ser = serial.Serial( 
-    port='COM3', 
+    port='COM7', 
     baudrate=115200,  
     timeout=1 
 )
